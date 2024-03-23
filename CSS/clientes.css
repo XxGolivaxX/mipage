@@ -1,0 +1,130 @@
+/* Estilos para la página de clientes */
+
+body {
+    margin: 0; /* Elimina el margen predeterminado del cuerpo */
+    padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+    background:white; /* Fondo con imagen centrada en la parte superior */
+    background-size: cover; /* La imagen de fondo cubre todo el cuerpo */
+    font-family: sans-serif; /* Establece la fuente predeterminada */
+    height: 100vh; /* Establece la altura del cuerpo al 100% del viewport height */
+}
+
+/* Estilos para el nav */
+nav {
+    background-color: #071952;/* Color morado translúcido para el fondo del nav */
+    padding: 20px 10%; /* Ajusta el relleno del nav */
+    text-align: center; /* Alinea el texto al centro */
+    width: 100%; /* Establece el ancho del nav al 100% */
+    box-sizing: border-box; /* Incluye el relleno en el ancho total */
+}
+
+h1 {
+    color: white; /* Color del texto del encabezado */
+    font-size: 36px; /* Tamaño de fuente del encabezado */
+    font-weight: bold; /* Establece el peso del texto a negrita */
+    text-shadow: 2px 2px 4px rgba(139, 133, 133, 0.3); /* Agrega una sombra suave al texto */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    margin: 0; /* Elimina el margen superior para evitar duplicación con el margen del nav */
+}
+
+#inputBuscar {
+    width: calc(75% - 150px); /* Ancho del input de búsqueda */
+    padding: 10px; /* Relleno del input */
+    margin: 20px auto; /* Márgenes automáticos */
+    display: block; /* Convertir en bloque */
+    border: none; /* Sin borde */
+    height: 40px; /* Altura del input */
+    background-color: rgba(0, 0, 0, 0.1); /* Color de fondo con opacidad */
+    border-radius: 5px; /* Radio de borde */
+    padding: 0 10px; /* Relleno interno */
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: 400; /* Peso de la fuente */
+    color: #333; /* Color del texto */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+#inputBuscar::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Color del placeholder */
+}
+
+#tablaClientes {
+    margin: 0 auto; /* Centra la tabla horizontalmente */
+    max-width: 1200px; /* Establece el ancho máximo de la tabla */
+    background-color: #eef7a1;
+    border-radius: 5px; /* Establece el radio de borde de la tabla */
+    overflow: hidden; /* Oculta el desbordamiento de la tabla */
+    padding: 10px; /* Añade relleno a la tabla */
+}
+
+table {
+    width: 100%; /* Establece el ancho de la tabla al 100% */
+    border-collapse: collapse; /* Colapsa los bordes de la tabla */
+}
+
+table th, table td {
+    border: 1px solid #ddd; /* Establece el borde de las celdas de la tabla */
+    padding: 12px; /* Añade relleno a las celdas de la tabla */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+table th {
+    background-color: #EA0000; /* Color de fondo para las celdas de encabezado */
+    color: #fff; /* Color del texto de las celdas de encabezado */
+}
+
+.search-container {
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Vertically align elements */
+    background-color: #FFFFFF; /* Background color */
+    padding: 10px; /* Add padding for better visibility */
+}
+
+.button-container {
+    margin-left: auto; /* Push buttons to the end of container */
+}
+
+
+button.rosita {
+    background-color: #752d9eec; 
+    color: black; 
+    border: none; 
+    padding: 12px 24px; /* Añade relleno al botón */
+    cursor: pointer; /* Establece el cursor a pointer */
+    border-radius: 5px; /* Establece el radio de borde del botón */
+    transition: background-color 0.3s ease; /* Transición de color de fondo */
+    margin-left: 10px; /* Añade margen izquierdo al botón */
+}
+
+button.rosita:hover {
+    background-color: #481769; /* Cambio de color al pasar el ratón */
+}
+
+button.eliminar {
+    background-color: #27efec; /* Color azul */
+    color: #000; /* Color del texto */
+    border: none; /* Elimina el borde del botón */
+    padding: 12px 24px; /* Añade relleno al botón */
+    cursor: pointer; /* Establece el cursor a pointer */
+    border-radius: 5px; /* Establece el radio de borde del botón */
+    transition: background-color 0.3s ease; /* Transición de color de fondo */
+    margin-right: 10px; /* Añade margen derecho al botón */
+}
+
+button.modificar {
+    background-color: #27EFEC; /* Color azul */
+    color: #000; /* Color del texto */
+    border: none; /* Elimina el borde del botón */
+    padding: 12px 24px; /* Añade relleno al botón */
+    cursor: pointer; /* Establece el cursor a pointer */
+    border-radius: 5px; /* Establece el radio de borde del botón */
+    transition: background-color 0.3s ease; /* Transición de color de fondo */
+}
+
+button:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último botón */
+}
+
+
+
+
+

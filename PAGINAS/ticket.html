@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+    <link rel="stylesheet" href="../CSS/ticket.css">
+</head>
+<body>
+    <nav>
+        <img src="../IMAGENES/G&C.png" alt="Logo" class="logo">
+    </nav>
+    <h1>Ticket de Compra</h1>
+    <div class="ticket-container">
+        <h2>Detalles del Pedido</h2>
+        <div id="detallesPedido">
+            <!-- Aquí se mostrarán los detalles del pedido -->
+        </div>
+        <div id="totales">
+            <!-- Aquí se mostrarán los totales -->
+        </div>
+        <div class="buttons">
+            <button class="imprimir" onclick="window.print()"><span>Imprimir ticket</span></button>
+            <button class="regresar" onclick="regresarACarrito()"><span>regresar a carrito</span></button>
+            <button class="cancelar" onclick="cancelarPedido()"><span>Cancelar</span></button>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            generarTicket();
+        };
+
+        // Función para generar el ticket con los detalles del pedido
+        function generarTicket() {
+            var detallesPedido = document.getElementById("detallesPedido");
+            var totales = document.getElementById("totales");
+            var carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            if (carrito.length === 0) {
+                detallesPedido.innerHTML = "<p>El carrito está vacío</p>";
+                totales.innerHTML = ""; // Limpiamos los totales si el carrito está vacío
+            } else {
+                detallesPedido.innerHTML = ""; // Limpiamos el contenido anterior
+                var totalGeneral = 0;
+                carrito.forEach(function(producto) {
+                    var totalProducto = producto.precio * producto.cantidad;
+                    totalGeneral += totalProducto;
+                    var productoDiv = document.createElement("div");
+                    productoDiv.classList.add("producto-en-ticket");
+                    productoDiv.innerHTML = "</h3><p><strong>Nombre: </strong>" + producto.nombre_p + "</h3><p><strong>Cantidad:</strong> " + producto.cantidad + "</p><p><strong>Precio Unitario:</strong> $" + producto.precio + "</p><p><strong>Total:</strong> $" + totalProducto + "</p>";
+                    detallesPedido.appendChild(productoDiv);
+                });
+                // Mostrar total general
+                totales.innerHTML = "<h3>Total General:</h3><p>$" + totalGeneral + "</p>";
+            }
+        }
+
+        // Función para regresar a la página de carrito
+        function regresarACarrito() {
+            window.location.href = "carrito.html";
+        }
+
+        // Función para cancelar el pedido
+        function cancelarPedido() {
+            localStorage.removeItem("carrito");
+            window.location.href = "ventas.html";
+        }
+    </script>
+</body>
+</html>
+
+
+
+

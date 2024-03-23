@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente Guardado</title>
+    <link rel="stylesheet" href="../CSS/producto_guardado.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Producto Guardado</h1>
+        <div>
+            <p>Los datos del cliente se han guardado correctamente:</p>
+            <ul>
+                <li><strong>Nombre:</strong> <span id="nombre_p"></span></li>
+                <li><strong>Codigo:</strong> <span id="codigo_p"></span></li>
+                <li><strong>Descripcion:</strong> <span id="descripcion_p"></span></li>
+                <li><strong>Color:</strong> <span id="color"></span></li>
+                <li><strong>Cantidad:</strong> <span id="cantidad"></span></li>
+                <li><strong>precio:</strong> <span id="precio"></span></li>
+            </ul>
+        </div>
+        <button onclick="window.location.href = 'inventario.html';">Regresar a invetario</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var params = new URLSearchParams(window.location.search);
+            var nombre_p = params.get('nombre_p');
+            var codigo_p = params.get('codigo_p');
+            var color = params.get('color');
+            var cantidad= params.get('cantidad');
+            var descripcion_p = params.get('descripcion_p');
+            var precio = params.get('precio');
+
+            // Mostrar los datos en la página
+            document.getElementById("nombre_p").innerText = nombre_p;
+            document.getElementById("codigo_p").innerText = codigo_p;
+            document.getElementById("descripcion_p").innerText = descripcion_p;
+            document.getElementById("color").innerText = color;
+            document.getElementById("cantidad").innerText = cantidad;
+            document.getElementById("precio").innerText = precio;
+        });
+    </script>
+</body>
+</html>
