@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar producto</title>
+    <link rel="stylesheet" href="../CSS/agregar_producto.css">
+</head>
+<body>
+    <nav>
+        <h1>Agregar producto </h1>
+    </nav>
+    <form action="../PHP/agregar_producto.php" method="POST">
+        <label for="nombre_p">Nombre:</label>
+        <input type="text" id="nombre_p" name="nombre_p" required oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1)"><br>
+        <label for="codigo_p">Codigo:</label>
+        <input type="text" id="codigo_p" name="codigo_p" required oninput="this.value = this.value.toUpperCase()"><br>
+        <label for="descripcion_p">Descripción:</label>
+        <input type="text" id="descripcion_p" name="descripcion_p" required oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1)"><br>
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" required oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1)"><br>
+        <label for="cantidad">Cantidad:</label>
+        <input type="text" id="cantidad" name="cantidad" required pattern="[0-9]+(\.[0-9]+)?" title="Por favor, ingrese un valor numérico para el precio"><br>
+        <label for="precio">Precio:</label>
+        <input type="text" id="precio" name="precio" required pattern="[0-9]+(\.[0-9]+)?" title="Por favor, ingrese un valor numérico para el precio"><br>
+        <input type="submit" value="Guardar">
+        <input type="button" value="Cancelar" class="cancel-button" onclick="window.location.href='../PAGINAS/inventario.html';">
+    </form>
+</body>
+</html>
+

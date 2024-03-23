@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../IMAGENES/mercedes.avif) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+.login-inicio{
+    width: 320px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.7);
+    color: blanchedalmond;
+    top: 50%;
+    left: 20%;
+    position: absolute;
+    transform: translate(-50% , -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 50px;
+}
+
+.login-inicio .loguito{
+    width: 260px;
+    height: 150px;
+    border-radius: 0%;
+    position: absolute;
+    top: -45px;
+    left: calc(35% - 80px);
+}
+
+.login-inicio h1{
+    margin: 30;
+    padding: 0 0 15px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.login-inicio label {
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    /*margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;*/
+}
+
+.login-inicio input{
+    width: 100%;
+    margin-bottom: 20px
+}
+
+.login-inicio input[type="text"],
+.login-inicio input[type="password"]{
+    display: block;
+    border: none;
+    height: 40px;
+    width: 240px;
+    background-color: rgb(255, 255, 255, 0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    /*border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color:aliceblue;
+    font-size: 16px;*/
+}
+
+.login-inicio input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: gold;
+    color: black;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.login-inicio a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color:darkgray;
+}
+
+.login-inicio a:hover{
+    color:aliceblue
+}

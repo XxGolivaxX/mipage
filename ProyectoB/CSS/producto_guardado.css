@@ -1,0 +1,62 @@
+/* Estilos para la página de cliente guardado */
+
+body{
+    margin: 0;
+    padding: 0;
+    background: rgb(216, 211, 211);
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+h1 {
+    color: black; /* Color del texto del encabezado */
+    font-size: 36px; /* Tamaño de fuente del encabezado */
+    font-weight: bold; /* Establece el peso del texto a negrita */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Agrega una sombra suave al texto */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    margin: 0; /* Elimina el margen superior para evitar duplicación con el margen del nav */
+}
+
+
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(249, 249, 249, 0.8); /* Gris translúcido */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+p {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+strong {
+    color: rgb(2, 20, 58);
+}
+
+button {
+    background-color: gold;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: goldenrod;
+}

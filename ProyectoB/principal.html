@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <!--<script src="IMAGENES/logocirculo.png"></script>>-->
+    <link rel="stylesheet" href="CSS/principal.css">
+</head>
+<body>
+
+<div class="page-main"><!--Anteriormente llamado hero-->
+    <nav>
+        <label for="menu" class="menu">Menú</label>
+        <img src="IMAGENES/cactus.avif" alt="profil" class="user-pic" onclick="toggleMenu()" /> <!--Imagen logo fuera-->
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <img src="IMAGENES/cactus.avif" alt="profil" class="user-pic" /><!--Imagen logo dentro-->
+                    <h3><?php echo $username; ?></h3>
+                </div>
+                <hr />
+                <a href="#" class="sub-menu-link">
+                    <i data-feather="user" class="icon"></i>
+                    <p>Editar perfil</p>
+                    <span> > </span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <i data-feather="settings" class="icon"></i>
+                    <p>Ajustes</p>
+                    <span> > </span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <i data-feather="help-circle" class="icon"></i>
+                    <p>Ayuda</p>
+                    <span> > </span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <i data-feather="log-out" class="icon"></i>
+                    <p>Cerrar Sesion</p>
+                    <span> > </span>
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
+<script>
+    feather.replace();
+</script>
+
+<script>
+    let subMenu = document.getElementById("subMenu");
+    function toggleMenu() {
+        subMenu.classList.toggle("open-menu");
+    }
+</script>
+<div class="container">
+    <div class="bontones">
+        <div class="bontones-row">
+          <a href="PAGINAS/clientes.html">
+            <button>Clientes</button>
+          </a>
+          <a href="PAGINAS/ventas.html">
+            <button>Ventas</button>
+          </a>
+          <a href="PAGINAS/polarizados.html">
+            <button>Polarizados</button>
+          </a>
+        </div>
+        <div class="bontones-row">
+          <a href="PAGINAS/generar_pedido.html">
+            <button>Generar pedido</button>
+          </a>
+            <a href="PAGINAS/agenda.html">
+              <button>Agenda</button>
+            </a>
+            <a href="PAGINAS/inventario.html">
+              <button>Inventario</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

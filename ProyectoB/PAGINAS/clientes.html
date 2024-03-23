@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Clientes</title>
+    <link rel="stylesheet" href="../CSS/clientes.css">
+
+    <script>
+        // Función para cargar los datos de los clientes desde el archivo PHP
+        function cargarClientes() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Parsear la respuesta JSON
+                    var clientes = JSON.parse(this.responseText);
+                    
+                    // Construir la tabla de clientes
+                    var tabla = "<table border='1'><tr><th>Nombre</th><th>Apellido Paterno</th><th>Apellido Materno</th><th>Modelo de Coche</th><th>Placa del Coche</th><th></th></tr>";
+                    clientes.forEach(function(cliente) {
+                        tabla += "<tr><td>" + cliente.nombre + "</td><td>" + cliente.apellido_p + "</td><td>" + cliente.apellido_m + "</td><td>" + cliente.modelo_c + "</td><td>" + cliente.placa_c + "</td><td><button class='eliminar' onclick='eliminarCliente(" + cliente.id + ", \"" + cliente.nombre + "\", \"" + cliente.apellido_p + "\", \"" + cliente.apellido_m + "\")'>Eliminar</button> <button class='modificar' onclick='modificarCliente(" + cliente.id + ", \"" + cliente.nombre + "\", \"" + cliente.apellido_m + "\", \"" + cliente.apellido_p + "\", \"" + cliente.modelo_c + "\", \"" + cliente.placa_c + "\")'>Modificar</button></td></tr>";
+                    });
+                    tabla += "</table>";
+                    
+                    // Mostrar la tabla en el contenedor
+                    document.getElementById("tablaClientes").innerHTML = tabla;
+                }
+            };
+            xhttp.open("GET", "../PHP/clientes.php", true);
+            xhttp.send();
+        }
+
+        // Función para eliminar un cliente
+        function eliminarCliente(id, nombre, apellido_p, apellido_m) {
+            if (confirm("¿Estás seguro de que deseas eliminar al cliente: " + nombre + " " + apellido_p + " " + apellido_m + "?")) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        alert("Cliente eliminado correctamente");
+                        // Recargar la lista de clientes después de eliminar uno
+                        cargarClientes();
+                    }
+                };
+                xhttp.open("GET", "../PHP/eliminar_cliente.php?id=" + id, true);
+                xhttp.send();
+            }
+        }
+
+        // Función para redirigir a la página de modificación de cliente
+        function modificarCliente(id, nombre, apellido_m, apellido_p, modelo_c, placa_c) {
+            window.location.href = "modificar_cliente.html?id=" + id + "&nombre=" + nombre + "&apellido_m=" + apellido_m + "&apellido_p=" + apellido_p + "&modelo_c=" + modelo_c + "&placa_c=" + placa_c;
+        }
+
+        // Función para realizar la búsqueda de clientes
+        function buscarClientes() {
+            var input = document.getElementById("inputBuscar").value.toLowerCase();
+            var tabla = document.getElementById("tablaClientes");
+            var tr = tabla.getElementsByTagName("tr");
+
+            for (var i = 0; i < tr.length; i++) {
+                var td = tr[i].getElementsByTagName("td");
+                var encontrado = false;
+                for (var j = 0; j < td.length; j++) {
+                    if (td[j] && td[j].innerHTML.toLowerCase().indexOf(input) > -1) {
+                        encontrado = true;
+                        break;
+                    }
+                }
+                if (encontrado) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="cargarClientes()">
+    <!-- Barra de navegación -->
+    <nav>
+        <h1>Lista de Clientes</h1>
+    </nav>
+
+    <!-- Contenedor de la barra de búsqueda y botones -->
+    <div class="search-container">
+        <!-- Barra de búsqueda -->
+        <input type="text" id="inputBuscar" onkeyup="buscarClientes()" placeholder="Buscar por nombre...">
+        <!-- Contenedor de botones -->
+        <div class="button-container">
+            <!-- Botón para agregar nuevo cliente -->
+            <button class="rosita" onclick="location.href='agregar_cliente.html'">Agregar Cliente</button>
+            <!-- Botón para regresar a principal.html -->
+            <button class="rosita" onclick="location.href='../principal.html'">Regresar a Principal</button>
+        </div>
+    </div>
+
+    <!-- Contenedor de la tabla de clientes -->
+    <div id="tablaClientes">
+        <table>
+            <!-- Contenido de la tabla -->
+        </table>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

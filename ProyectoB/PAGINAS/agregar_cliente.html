@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Cliente</title>
+    <link rel="stylesheet" href="../CSS/agregar_cliente.css">
+</head>
+<body>
+    <nav>
+        <h1>Agregar Cliente</h1>
+    </nav>
+    <form action="../PHP/agregar_cliente.php" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+        <label for="apellido_p">Apellido Paterno:</label>
+        <input type="text" id="apellido_p" name="apellido_p" required><br>
+        <label for="apellido_m">Apellido Materno:</label>
+        <input type="text" id="apellido_m" name="apellido_m" required><br>
+        <label for="modelo_c">Modelo de Coche:</label>
+        <input type="text" id="modelo_c" name="modelo_c" required><br>
+        <label for="placa_c">Placa del Coche:</label>
+        <input type="text" id="placa_c" name="placa_c" required><br>
+        <input type="submit" value="Guardar">
+        <input type="button" value="Cancelar" class="cancel-button" onclick="window.location.href='../PAGINAS/clientes.html';">
+    </form>
+</body>
+</html>
