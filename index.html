@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes con Encuesta</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .gallery-item {
+            flex: 1 1 calc(33.333% - 20px);
+            margin: 10px;
+            min-width: 250px; /* Tamaño mínimo para imágenes */
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .gallery-item {
+                flex: 1 1 calc(50% - 20px); /* 2 imágenes por fila en tabletas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item {
+                flex: 1 1 100%; /* 1 imagen por fila en móviles */
+            }
+        }
+
+        /* Encuesta */
+        .survey {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .survey h2 {
+            margin-bottom: 15px;
+        }
+
+        .survey form {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .survey label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .submit-btn {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align:center; margin-bottom: 20px;">Galería de Imágenes</h1>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="imagen1.jpg" alt="Imagen 1">
+        </div>
+        <div class="gallery-item">
+            <img src="imagen2.jpg" alt="Imagen 2">
+        </div>
+        <div class="gallery-item">
+            <img src="imagen3.jpg" alt="Imagen 3">
+        </div>
+        <div class="gallery-item">
+            <img src="imagen4.jpg" alt="Imagen 4">
+        </div>
+        <div class="gallery-item">
+            <img src="imagen5.jpg" alt="Imagen 5">
+        </div>
+        <div class="gallery-item">
+            <img src="imagen6.jpg" alt="Imagen 6">
+        </div>
+    </div>
+
+    <!-- Encuesta -->
+    <div class="survey">
+        <h2>¿Cuál es tu imagen favorita?</h2>
+        <form>
+            <label>
+                <input type="radio" name="vote" value="imagen1"> Imagen 1
+            </label>
+            <label>
+                <input type="radio" name="vote" value="imagen2"> Imagen 2
+            </label>
+            <label>
+                <input type="radio" name="vote" value="imagen3"> Imagen 3
+            </label>
+            <label>
+                <input type="radio" name="vote" value="imagen4"> Imagen 4
+            </label>
+            <label>
+                <input type="radio" name="vote" value="imagen5"> Imagen 5
+            </label>
+            <label>
+                <input type="radio" name="vote" value="imagen6"> Imagen 6
+            </label>
+
+            <button type="submit" class="submit-btn">Votar</button>
+        </form>
+    </div>
+
+</body>
+</html>
