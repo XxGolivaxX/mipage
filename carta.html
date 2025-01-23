@@ -13,6 +13,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
     }
 
     .letter {
@@ -20,36 +21,94 @@
       width: 80%;
       max-width: 600px;
       padding: 30px;
-      border: 2px solid #ccc;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border: 2px solid #e0b79e;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
       font-size: 1.2rem;
-      line-height: 1.6;
-      text-align: center;
+      line-height: 1.8;
+      text-align: left;
+      position: relative;
+      background-image: linear-gradient(135deg, #f7e6c2, #ffffff);
+      background-size: 200% 200%;
+      animation: bgMove 3s ease infinite;
+      overflow: hidden;
+    }
+
+    @keyframes bgMove {
+      0% {
+        background-position: 200% 200%;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    .letter:before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background-color: #e0b79e;
+      border-radius: 15px;
+      z-index: -1;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
     }
 
     .letter h1 {
       font-size: 2.5rem;
-      color: #28a745;
+      color: #8b5e3c;
       margin-bottom: 20px;
+      text-align: center;
+      text-transform: capitalize;
+      letter-spacing: 2px;
     }
 
     .letter p {
       margin-bottom: 20px;
+      text-align: justify;
+      color: #555;
+      font-weight: 300;
+      text-indent: 30px;
+      line-height: 1.6;
     }
 
     .heart {
       font-size: 3rem;
       color: red;
+      text-align: center;
+      margin-top: 30px;
+      animation: heartbeat 1.5s infinite alternate;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.2);
+      }
+    }
+
+    /* Añadimos un suave efecto de movimiento en la carta */
+    .letter:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    .letter p span {
+      font-style: italic;
+      color: #6a4f37;
     }
   </style>
 </head>
 <body>
   <div class="letter">
     <h1>Doxy,</h1>
-    <p>Se que es complicado para ti está situación pero agradezco que estés conmigo y me des esta oportunidad gracias por ser mi novia hermosa, no te voy a fallar. 
-Eres una mujer increíble y verás que las cosas van a ser distintas.</p>
-    <p>Quiero pasar todos los días haciendote sentir lo especial que eres para mí, espero tu respuesta por Whatsapp</p>
+    <p>Se que es complicado para ti está situación pero agradezco que estés conmigo y me des esta oportunidad gracias por ser mi novia hermosa, no te voy a fallar. Eres una mujer increíble y verás que las cosas van a ser distintas.</p>
+    <p>Quiero pasar todos los días haciéndote sentir lo especial que eres para mí, espero tu respuesta por <span>Whatsapp</span>.</p>
     <p class="heart">Te amo ❤️</p>
   </div>
 </body>
