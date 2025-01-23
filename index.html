@@ -132,6 +132,30 @@
         text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(30, 144, 255, 1);
       }
     }
+
+    /* Estilo del botón */
+    .btn {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, transform 0.2s;
+      margin-top: 20px;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #218838;
+      transform: translateY(-5px);
+    }
+
+    .btn:active {
+      transform: translateY(2px);
+    }
   </style>
 </head>
 <body>
@@ -149,6 +173,8 @@
   <div class="container">
     <h1>¿Quieres ser mi novia?</h1>
     <p>Te prometo llenar tus días <br> con alegría y amor eterno.</p>
+    <!-- Botón de enlace -->
+    <a href="carta.html" class="btn">Sí, quiero</a>
   </div>
 </body>
 </html>
