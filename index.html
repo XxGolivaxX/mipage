@@ -1,145 +1,65 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Imágenes con Encuesta</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Quieres ser mi novia?</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Arial', sans-serif;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 30px 50px;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
 
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
+    h1 {
+      font-size: 3rem;
+      color: #ff6b6b;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      margin: 0;
+    }
 
-        .gallery-item {
-            flex: 1 1 calc(33.333% - 20px);
-            margin: 10px;
-            min-width: 250px; /* Tamaño mínimo para imágenes */
-        }
+    p {
+      font-size: 1.2rem;
+      color: #444;
+      margin: 10px 0 20px;
+    }
 
-        .gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      color: white;
+      background-color: #ff6b6b;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, background-color 0.3s;
+    }
 
-        .gallery img:hover {
-            transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
-        }
-
-        /* Responsividad */
-        @media (max-width: 768px) {
-            .gallery-item {
-                flex: 1 1 calc(50% - 20px); /* 2 imágenes por fila en tabletas */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .gallery-item {
-                flex: 1 1 100%; /* 1 imagen por fila en móviles */
-            }
-        }
-
-        /* Encuesta */
-        .survey {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .survey h2 {
-            margin-bottom: 15px;
-        }
-
-        .survey form {
-            display: inline-block;
-            text-align: left;
-        }
-
-        .survey label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .submit-btn {
-            display: block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .submit-btn:hover {
-            background-color: #45a049;
-        }
-    </style>
+    .btn:hover {
+      background-color: #ff4c4c;
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
-
-    <h1 style="text-align:center; margin-bottom: 20px;">Galería de Imágenes</h1>
-
-    <div class="gallery">
-        <div class="gallery-item">
-            <img src="imagen1.jpg" alt="Imagen 1">
-        </div>
-        <div class="gallery-item">
-            <img src="imagen2.jpg" alt="Imagen 2">
-        </div>
-        <div class="gallery-item">
-            <img src="imagen3.jpg" alt="Imagen 3">
-        </div>
-        <div class="gallery-item">
-            <img src="imagen4.jpg" alt="Imagen 4">
-        </div>
-        <div class="gallery-item">
-            <img src="imagen5.jpg" alt="Imagen 5">
-        </div>
-        <div class="gallery-item">
-            <img src="imagen6.jpg" alt="Imagen 6">
-        </div>
-    </div>
-
-    <!-- Encuesta -->
-    <div class="survey">
-        <h2>¿Cuál es tu imagen favorita?</h2>
-        <form>
-            <label>
-                <input type="radio" name="vote" value="imagen1"> Imagen 1
-            </label>
-            <label>
-                <input type="radio" name="vote" value="imagen2"> Imagen 2
-            </label>
-            <label>
-                <input type="radio" name="vote" value="imagen3"> Imagen 3
-            </label>
-            <label>
-                <input type="radio" name="vote" value="imagen4"> Imagen 4
-            </label>
-            <label>
-                <input type="radio" name="vote" value="imagen5"> Imagen 5
-            </label>
-            <label>
-                <input type="radio" name="vote" value="imagen6"> Imagen 6
-            </label>
-
-            <button type="submit" class="submit-btn">Votar</button>
-        </form>
-    </div>
-
+  <div class="container">
+    <h1>¿Quieres ser mi novia?</h1>
+    <p>Eres la persona más especial para mí. <br> Espero con emoción tu respuesta.</p>
+    <a href="#" class="btn">¡Sí, quiero!</a>
+  </div>
 </body>
 </html>
