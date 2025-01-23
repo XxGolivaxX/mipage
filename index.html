@@ -23,7 +23,7 @@
       color: white;
     }
 
-    /* Fondo dinámico de partículas */
+    /* Fondo con girasoles en movimiento */
     .background {
       position: absolute;
       top: 0;
@@ -34,54 +34,56 @@
       z-index: 1;
     }
 
-    .particle {
+    .sunflower {
       position: absolute;
-      background: white;
-      border-radius: 50%;
+      bottom: -20%;
+      animation: moveUp 10s linear infinite;
       opacity: 0.8;
-      animation: float 6s linear infinite;
     }
 
-    @keyframes float {
+    .sunflower img {
+      width: 100px;
+      height: 100px;
+    }
+
+    @keyframes moveUp {
       from {
-        transform: translateY(100vh) scale(0.5);
+        transform: translateY(100vh);
       }
       to {
-        transform: translateY(-10vh) scale(1);
+        transform: translateY(-100vh);
       }
     }
 
-    /* Ajustar tamaño y posición de partículas */
-    .particle:nth-child(1) {
-      width: 5px;
-      height: 5px;
-      left: 20%;
-      animation-duration: 5s;
-      animation-delay: 0s;
+    /* Crear diferentes girasoles con variación de posiciones y tiempos */
+    .sunflower:nth-child(1) {
+      left: 15%;
+      animation-duration: 8s;
     }
 
-    .particle:nth-child(2) {
-      width: 10px;
-      height: 10px;
+    .sunflower:nth-child(2) {
+      left: 40%;
+      animation-duration: 12s;
+    }
+
+    .sunflower:nth-child(3) {
+      left: 70%;
+      animation-duration: 10s;
+    }
+
+    .sunflower:nth-child(4) {
+      left: 90%;
+      animation-duration: 15s;
+    }
+
+    .sunflower:nth-child(5) {
       left: 50%;
       animation-duration: 7s;
-      animation-delay: 1s;
     }
 
-    .particle:nth-child(3) {
-      width: 8px;
-      height: 8px;
-      left: 75%;
-      animation-duration: 8s;
-      animation-delay: 3s;
-    }
-
-    .particle:nth-child(4) {
-      width: 6px;
-      height: 6px;
-      left: 35%;
-      animation-duration: 6s;
-      animation-delay: 2s;
+    .sunflower:nth-child(6) {
+      left: 30%;
+      animation-duration: 14s;
     }
 
     /* Contenido principal */
@@ -133,12 +135,14 @@
   </style>
 </head>
 <body>
-  <!-- Fondo de partículas dinámico -->
+  <!-- Fondo con girasoles flotantes -->
   <div class="background">
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
+    <div class="sunflower"><img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Flower_Sunflower.jpg" alt="Girasol"></div>
+    <div class="sunflower"><img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Flower_Sunflower.jpg" alt="Girasol"></div>
+    <div class="sunflower"><img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Flower_Sunflower.jpg" alt="Girasol"></div>
+    <div class="sunflower"><img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Flower_Sunflower.jpg" alt="Girasol"></div>
+    <div class="sunflower"><img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Flower_Sunflower.jpg" alt="Girasol"></div>
+    <div class="sunflower"><img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Flower_Sunflower.jpg" alt="Girasol"></div>
   </div>
 
   <!-- Contenido principal -->
